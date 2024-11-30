@@ -1,0 +1,221 @@
+
+/* Resetări generale */
+body, h1, h2, p, ul, li, img, a, blockquote, button, input, textarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #800000;
+    color: #fff;
+}
+header .logo img {
+    width: 50px;
+    height: auto;
+}
+header .menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+header .menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+header .menu a:hover {
+    color: #ffd700;
+}
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2b0201;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(145, 5, 5, 0.558);
+    text-decoration: none;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Animație la hover */
+  #back-to-top:hover {
+    background-color: #790202;
+    transform: scale(1.1);
+  }
+  
+  /* Ascunderea săgeții dacă nu e utilizată */
+  #back-to-top.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Arată mereu săgeata pe ecran */
+  #back-to-top {
+    opacity: 1;
+  }
+/* Testimonials Intro */
+.testimonials-intro {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f4f4f4;
+}
+.testimonials-intro h1 {
+    font-size: 2.5rem;
+    color: #800000;
+}
+.testimonials-intro p {
+    margin-top: 1rem;
+}
+
+/* Testimonials Grid */
+
+.testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+    justify-content: center;
+}
+.testimonial-card {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+.testimonial-card blockquote {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #555;
+}
+.testimonial-card .author {
+    font-weight: bold;
+    color: #800000;
+}
+
+/* Add Testimonial */
+.add-testimonial {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 2rem auto;
+}
+.add-testimonial h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #800000;
+    text-transform: uppercase;
+}
+.add-testimonial .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+.add-testimonial label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #800000;
+    font-size: 1rem;
+}
+.add-testimonial input, 
+.add-testimonial textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+.add-testimonial input:focus, 
+.add-testimonial textarea:focus {
+    border-color: #800000;
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 0, 0.5);
+}
+.add-testimonial button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #800000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.add-testimonial button:hover {
+    background-color: #5a0000;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* O coloană */
+    }
+    .testimonial-card {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonials-intro h1 {
+        font-size: 1.8rem;
+    }
+    .add-testimonial {
+        width: 100%;
+        padding: 1rem;
+    }
+    .add-testimonial input, .add-testimonial textarea {
+        font-size: 0.9rem;
+    }
+    .add-testimonial button {
+        font-size: 0.9rem;
+    }
+}

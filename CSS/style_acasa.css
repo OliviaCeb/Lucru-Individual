@@ -1,0 +1,258 @@
+
+/* Resetări generale */
+body, h1, h2, p, ul, li, img, a, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #800000; /* bordo */
+    color: #fff;
+}
+header .logo img {
+    width: 50px;
+    height: auto;
+}
+header .menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+header .menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+header .menu a:hover {
+    color: #ffd700;
+}
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2b0201;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(145, 5, 5, 0.558);
+    text-decoration: none;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Animație la hover */
+  #back-to-top:hover {
+    background-color: #790202;
+    transform: scale(1.1);
+  }
+  
+  /* Ascunderea săgeții dacă nu e utilizată */
+  #back-to-top.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Arată mereu săgeata pe ecran */
+  #back-to-top {
+    opacity: 1;
+  }
+  
+/* Intro Section */
+.intro {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f4f4f4;
+}
+.intro h1 {
+    font-size: 2.5rem;
+    color: #800000;
+    transition: transform 0.5s ease;
+}
+.intro h1:hover {
+    transform: translateY(-10px) rotate(5deg);
+}
+.intro p {
+    margin-top: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+.intro p:hover {
+    color: #800000;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+.gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #800000;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.hover-img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-img:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.benefits, .testimonials {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.benefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+.benefits li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+.testimonial {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.testimonial p:first-child {
+    font-style: italic;
+    color: #555;
+}
+.testimonial p:last-child {
+    font-weight: bold;
+    color: #800000;
+}
+/* Animation Demo Section */
+.animation-demo {
+    padding: 4rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+.animated-box {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.animated-box:hover {
+    transform: scale(1.1);
+}
+#rotate-box:hover {
+    animation: rotate-animation 2s infinite;
+}
+#scale-box:hover {
+    animation: scale-animation 2s infinite;
+}
+
+/* Keyframes */
+@keyframes rotate-animation {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes scale-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+/* Sprite Styling */
+.contact-sprites {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.sprite {
+    display: inline-block;
+    width: 98px; /* Dimensiunea fiecărei iconițe */
+    height: 98px;
+    background-image: url('css_sprites.png'); /* Înlocuiește cu calea spre sprite */
+    background-size: 346px 230px; /* Dimensiunea totală a sprite-ului */
+    transition: transform 0.3s ease-in-out;
+}
+.sprite:hover {
+    transform: scale(1.2); /* Efect hover pentru mărire */
+}
+
+/* Pozițiile individuale ale sprite-urilor */
+.facebook {
+    background-position: -242px -10px; /* Prima iconiță */
+}
+.instagram {
+    background-position: -124px -126px; /* A doua iconiță */
+}
+.linkedin {
+    background-position: -10px -126px; /* A treia iconiță */
+}
+.email {
+    background-position: -126px -10px; /* A patra iconiță */
+}
+.phone {
+    background-position: -10px -10px; /* A cincea iconiță */
+}
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .intro h1 {
+        font-size: 2rem;
+    }
+    .intro p {
+        font-size: 1rem;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* O coloană */
+    }
+    .hover-img {
+        width: 100%;
+        height: auto;
+    }
+    .animated-box {
+        width: 100px;
+        height: 100px;
+    }
+}
